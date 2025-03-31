@@ -20,7 +20,10 @@ module.exports = async (req, res) => {
     });
 
     const authParams = imagekit.getAuthenticationParameters();
-    res.status(200).json(authParams);
+    res.status(200).json({
+      ...authParams,
+      publicKey: process.env.IMAGEKIT_PUBLIC_KEY,
+    });
   } catch (err) {
     console.error('ImageKit error:', err);
     res.status(500).json({ error: 'ImageKit auth failed' });
