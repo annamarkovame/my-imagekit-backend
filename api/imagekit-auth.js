@@ -7,6 +7,12 @@ module.exports = async (req, res) => {
   }
 
   try {
+    console.log("ENV VARS", {
+      publicKey: process.env.IMAGEKIT_PUBLIC_KEY,
+      privateKey: process.env.IMAGEKIT_PRIVATE_KEY ? "loaded" : "missing",
+      urlEndpoint: process.env.IMAGEKIT_BASE_URL,
+    });
+    
     const imagekit = new ImageKit({
       publicKey: process.env.IMAGEKIT_PUBLIC_KEY || '',
       privateKey: process.env.IMAGEKIT_PRIVATE_KEY || '',
