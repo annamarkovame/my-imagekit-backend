@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "target": "ES2020",                    // Modern JS output
+      "module": "ES2020",                    // Required for ESM
+      "moduleResolution": "node",            // Resolve using Node.js logic
+      "esModuleInterop": true,               // Allow default imports from CommonJS modules
+      "allowSyntheticDefaultImports": true,  // Let you do `import x from 'x'`
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,                        // Enable all strict type-checking
+      "skipLibCheck": true,                  // Skip type checking of node_modules
+      "resolveJsonModule": true,             // Allow importing JSON files
+      "outDir": "dist",                      // Optional: compiled output folder
+      "types": []
+    },
+    "include": ["api"],                      // Adjust based on your source folder
+    "exclude": ["node_modules", "dist"]
+  }
+  
